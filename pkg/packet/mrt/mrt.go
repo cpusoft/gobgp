@@ -953,6 +953,8 @@ func ParseMRTBody(h *MRTHeader, data []byte) (*MRTMessage, error) {
 				isAddPath:   isAddPath,
 			}
 		}
+	case BGP4MP_ET:
+		fallthrough
 	case BGP4MP:
 		subType := MRTSubTypeBGP4MP(h.SubType)
 		isAS4 := true
